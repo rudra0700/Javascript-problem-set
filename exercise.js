@@ -163,6 +163,25 @@
 }
 
 {
+  const numbers = [5, 6, 11, 12, 98, 5];
+
+  function countRepeted(numbers) {
+    let counObject = {};
+    for (const number of numbers) {
+      if (counObject[number]) {
+        counObject[number] += 1;
+      } else {
+        counObject[number] = 1;
+      }
+    }
+    return counObject;
+  }
+
+  const result = countRepeted(numbers);
+  console.log(result);
+}
+
+{
   //. 8 count frequency of each element in an array
   const names = ["sumit", "mks", "nayem", "sumit", "nayem", "sumit"];
 
