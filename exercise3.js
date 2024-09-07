@@ -123,3 +123,106 @@
     }
     console.log(result.trim());
   }
+
+  function inchToFeet(inch) {
+    const feet = inch / 12;
+    return feet;
+  }
+  const myHeight = inchToFeet(75);
+  console.log(myHeight);
+  
+  {
+    function inchToFeet(inch) {
+      const feetFraction = inch / 12;
+      const feetNumber = parseInt(feetFraction);
+      const inchRemaining = inch % 12;
+      const result = `${feetNumber} feet ${inchRemaining} inch`;
+      return result;
+    }
+  
+    const myHeight = inchToFeet(75);
+    console.log(myHeight);
+  }
+  
+  {
+    function mileToKm(mile) {
+      const kilo = mile * 1.60934;
+      return kilo;
+    }
+    const sevenKilo = mileToKm(7);
+    console.log(sevenKilo);
+  }
+  
+  {
+    // The year will be leap year if that year divisible by 4
+  
+    function isLeapYear(year) {
+      if (year % 4 === 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  
+    const isLipi = isLeapYear(1900);
+    console.log(isLipi);
+  }
+  
+  {
+    // the year is not divisible by 100 and divisible by 4 is a leap year
+    //   And the year is divisible by 400 is a leap year also
+  
+    function isLeapYear(year) {
+      if (year % 100 !== 0 && year % 4 === 0) {
+        return true;
+      } else if (year % 100 === 0 && year % 400 === 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  
+    const isLeap = isLeapYear(2100);
+    const isLeap2 = isLeapYear(2400);
+    const isLeap3 = isLeapYear(1900);
+    const isLeap4 = isLeapYear(2052);
+    console.log(isLeap, isLeap2, isLeap3, isLeap4);
+  }
+  
+  {
+    // find the average of Odd number
+    function oddAverage(numbers) {
+      let oddNumbers = [];
+      let sumOfOddNumbers = 0;
+      let oddAverage = 0;
+      for (const number of numbers) {
+        if (number % 2 === 1) {
+          oddNumbers.push(number);
+        }
+      }
+      for (const oddNumber of oddNumbers) {
+        sumOfOddNumbers += oddNumber;
+      }
+      oddAverage = sumOfOddNumbers / oddNumbers.length;
+      return oddAverage;
+    }
+    const oddArr = [42, 13, 58, 65, 81, 96, 7, 105];
+    const result = oddAverage(oddArr);
+    console.log(result);
+  }
+  
+  {
+    // remove duplicate Array
+    function noDuplicat(array) {
+      let uniqueArray = [];
+      for (const item of array) {
+        if (uniqueArray.includes(item) === false) {
+          uniqueArray.push(item);
+        }
+      }
+      return uniqueArray;
+    }
+  
+    const result = noDuplicat([1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]);
+    console.log(result);
+  }
