@@ -293,3 +293,389 @@ console.log(myHeight);
   const result = countVowels("bangladeshi");
   // console.log(result);
 }
+
+{
+  // Find the friend with the smallest name.
+  const heights2 = ["rahim", "robin", "rafi", "ron", "rashed"];
+
+  function smallestName(height) {
+    let smallestName = height[0];
+    for (const smallest of height) {
+      if (smallest.length < smallestName.length) {
+        smallestName = smallest;
+      }
+    }
+    return smallestName;
+  }
+
+  const result = smallestName(heights2);
+  //   console.log(result);
+}
+
+{
+  // Your task is to calculate the total budget required to buy electronics:
+
+  // Write a JavaScript function named calculateElectronicsBudget that takes in the number of laptop, tablets, and mobile and returns the total money required.
+
+  function totalBudget(laptopQuantity, tabletQuantity, mobileQuantity) {
+    const laptop = 35000;
+    const tablet = 15000;
+    const mobile = 20000;
+
+    const perLaptopPrice = laptop * laptopQuantity;
+    const perTabletPrice = tablet * tabletQuantity;
+    const perMobilePrice = mobile * mobileQuantity;
+
+    const total = perLaptopPrice + perTabletPrice + perMobilePrice;
+    return total;
+  }
+
+  const result = totalBudget(0, 0, 3);
+  //   console.log(result);
+}
+
+{
+  // You are given an array of phone objects, each containing information about the model, brand, and price. Your task is to write a JavaScript function named findAveragePhonePrice that takes this array as input and returns the average price of phone.
+
+  const phones = [
+    { model: "PhoneA", brand: "Iphone", price: 95000 },
+    { model: "PhoneB", brand: "Samsung", price: 40000 },
+    { model: "PhoneC", brand: "Oppo", price: 26000 },
+    { model: "PhoneD", brand: "Nokia", price: 35000 },
+    { model: "PhoneE", brand: "Iphone", price: 105000 },
+    { model: "PhoneF", brand: "HTC", price: 48000 },
+  ];
+
+  function getAverage(phones) {
+    let totalPrice = 0;
+    for (const phone of phones) {
+      const price = phone.price;
+      totalPrice = totalPrice + price;
+    }
+    const average = totalPrice / phones.length;
+    return parseFloat(average.toFixed(2));
+  }
+
+  const result = getAverage(phones);
+  //   console.log(result);
+}
+
+{
+  // For each employee their current salary is calculated by multiplying yearly increment with experience then adding the result to the starting salary. Now calculate is the total salary has to be provided by the company in a month.
+}
+
+{
+  const employees = [
+    { name: "shahin", experience: 5, starting: 20000, increment: 5000 },
+    { name: "shihab", experience: 3, starting: 15000, increment: 7000 },
+    { name: "shikot", experience: 9, starting: 30000, increment: 1000 },
+    { name: "shohel", experience: 0, starting: 29000, increment: 4000 },
+  ];
+
+  function calculateTotalMonthlySalary(employees) {
+    let totalMonthlySalary = 0;
+
+    for (const employee of employees) {
+      const yearlyIncrement = employee.experience * employee.increment;
+      const currentYearlySalary = employee.starting + yearlyIncrement;
+
+      const monthlySalary = currentYearlySalary / 12;
+
+      totalMonthlySalary += monthlySalary;
+    }
+
+    return totalMonthlySalary;
+  }
+
+  const totalSalary = calculateTotalMonthlySalary(employees);
+  console.log(
+    "Total monthly salary to be provided by the company:",
+    totalSalary
+  );
+}
+
+{
+  const friends = [
+    "solaiman",
+    "bishal",
+    "bishal",
+    "momen",
+    "jahid",
+    "shuvo",
+    "shuvo",
+  ];
+
+  function removeDuplicate(friends) {
+    let uniqueArray = [];
+    let duplicateValue = [];
+    for (const friend of friends) {
+      if (uniqueArray.includes(friend) === false) {
+        uniqueArray.push(friend);
+      } else {
+        duplicateValue.push(friend);
+      }
+    }
+    return [uniqueArray, duplicateValue];
+  }
+
+  const test = removeDuplicate(friends);
+  // console.log(test);
+}
+
+{
+  // get average marks
+  const myMarks = {
+    bangla: 65,
+    english: 80,
+    math: 33,
+    history: 65,
+    geography: 80,
+  };
+
+  function getAverage(marks) {
+    let total = 0;
+    let avg = 0;
+    for (const mark in marks) {
+      total += marks[mark];
+    }
+
+    let keys = Object.keys(myMarks);
+    return (avg += total / keys.length);
+  }
+
+  const result = getAverage(myMarks);
+  // console.log(result);
+}
+
+{
+  // get average marks another way
+  const myMarks = {
+    bangla: 65,
+    english: 80,
+    math: 33,
+    history: 65,
+    geography: 80,
+  };
+
+  function getAverage(marks) {
+    let total = 0;
+    let subject = [];
+    for (const mark in marks) {
+      total += marks[mark];
+      subject.push(mark);
+    }
+
+    const avg = total / subject.length;
+    return avg;
+  }
+
+  const result = getAverage(myMarks);
+  console.log(result);
+}
+{
+  // vowel check
+  const text = "Lets code our carrier with our programming hero";
+
+  function checkVowel(text) {
+    let result = "";
+    let count = 0;
+    let vowels = "aeiouAEIOU";
+
+    for (let i = 0; i < text.length; i++) {
+      if (vowels.includes(text[i])) {
+        result += text[i];
+        count++;
+      }
+    }
+    return `${result}, total vowel is ${count}`;
+  }
+
+  const result = checkVowel(text);
+  console.log(result);
+}
+
+{
+  const text = "Lets code our carrier with our programming hero";
+  const vowels = "aeiouAEIOU"; // Include both lowercase and uppercase vowels
+
+  let vowelCount = 0;
+
+  for (let char of text) {
+    if (vowels.includes(char)) {
+      vowelCount++;
+    }
+  }
+
+  console.log(`Number of vowels: ${vowelCount}`);
+}
+
+{
+  // checkVowel
+
+  function countVowels(str) {
+    let count = 0;
+    const vowels = ["a", "e", "i", "o", "u"];
+
+    for (let char of str.toLowerCase()) {
+      if (vowels.includes(char)) {
+        count++;
+      }
+    }
+
+    return count;
+  }
+
+  // Example usage
+  let inputString = "Hello World";
+  console.log(countVowels(inputString)); // Output: 3
+}
+
+{
+  // make calculator functionality
+
+  function add(num1, num2) {
+    return num1 + num2;
+  }
+  function subtract(num1, num2) {
+    return num1 - num2;
+  }
+  function multiply(num1, num2) {
+    return num1 * num2;
+  }
+  function division(num1, num2) {
+    return num1 / num2;
+  }
+
+  function calculate(a, b, operation) {
+    if (operation === "add") {
+      const result = add(a, b);
+      return result;
+    } else if (operation === "subtract") {
+      const result = subtract(a, b);
+      return result;
+    } else if (operation === "multiply") {
+      const result = multiply(a, b);
+      return result;
+    } else if (operation === "division") {
+      const result = division(a, b);
+      return result;
+    } else {
+      return `only add, subtract, multiply and division operation allowed`;
+    }
+  }
+
+  const test = calculate(5, 7, "subtract");
+  console.log(test);
+}
+{
+  // find the cheapest phone
+  const phones = [
+    { name: "samsung", price: 16000, camera: "12mp", color: "black" },
+    { name: "xiaomi", price: 20000, camera: "16mp", color: "black" },
+    { name: "oppo", price: 30000, camera: "20mp", color: "black" },
+    { name: "nokia", price: 38000, camera: "25mp", color: "black" },
+    { name: "sony", price: 50000, camera: "30mp", color: "black" },
+    { name: "iphone", price: 100000, camera: "50mp", color: "black" },
+  ];
+
+  function chepestPhone(phones) {
+    let min = phones[0];
+    for (const phone of phones) {
+      if (phone.price < min.price) {
+        min = phone;
+      }
+    }
+    return min;
+  }
+
+  const chepest = chepestPhone(phones);
+  console.log("cheapet phone price is : ", chepest);
+}
+
+{
+  // one layer discount price
+  function discountedPrice(quantity) {
+    let total = 0;
+    if (quantity <= 100) {
+      return (total += quantity * 100);
+    } else if (quantity <= 200) {
+      return (total += quantity * 90);
+    } else {
+      return (total += quantity * 70);
+    }
+  }
+
+  const result = discountedPrice(201);
+  console.log(result);
+}
+
+{
+  // multiLayer discount price
+  function multiLayerDiscount(quantity) {
+    const first100Price = 100;
+    const second100Price = 90;
+    const above200Price = 70;
+
+    let total = 0;
+    if (quantity <= 100) {
+      return (total += quantity * first100Price);
+    } else if (quantity <= 200) {
+      const first100Total = 100 * first100Price;
+      const remainingQuantity = quantity - 100;
+      const remainingTotal = remainingQuantity * second100Price;
+      return (total += first100Total + remainingTotal);
+    } else {
+      const first100Total = 100 * first100Price;
+      const second100Total = 100 * second100Price;
+      const remainingQuantity = quantity - 200;
+      const remainingTotal = remainingQuantity * above200Price;
+      return (total += first100Total + second100Total + remainingTotal);
+    }
+  }
+
+  const result = multiLayerDiscount(300);
+  console.log(result);
+}
+
+{
+  //  product price with quantity
+  const products = [
+    { name: "shampoo", price: 500, quantity: 2 },
+    { name: "comb", price: 600, quantity: 1 },
+    { name: "shirt", price: 700, quantity: 3 },
+    { name: "pant", price: 800, quantity: 4 },
+    { name: "belt", price: 900, quantity: 2 },
+  ];
+
+  function totalPrice(products) {
+    let total = 0;
+    for (const product of products) {
+      const productCost = product.price * product.quantity;
+      total += productCost;
+    }
+
+    return total;
+  }
+
+  const result = totalPrice(products);
+  console.log("total price is : ", result);
+}
+
+{
+  // total wood quantity
+  function totalWoodQuantity(chairQuantity, tableQuantity, bedQuantity) {
+    const perChairWood = 3;
+    const perTableWood = 10;
+    const perBedWood = 50;
+
+    const chairTotalWood = chairQuantity * perChairWood;
+    const tableTotalWood = tableQuantity * perTableWood;
+    const bedTotalWood = bedQuantity * perBedWood;
+
+    const totalWood = chairTotalWood + tableTotalWood + bedTotalWood;
+    return totalWood;
+  }
+
+  const result = totalWoodQuantity(0, 0, 1);
+  console.log(result);
+}
