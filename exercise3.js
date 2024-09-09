@@ -679,3 +679,146 @@ console.log(myHeight);
   const result = totalWoodQuantity(0, 0, 1);
   console.log(result);
 }
+
+
+{
+  function calculateMoney(input) {
+    const ticketPrice = 120;
+    const gateManFee = 500;
+    const stuffFee = 400;
+
+    if (input <= 0) {
+      return "please provide positive number";
+    }
+    const remainingMoney = input * ticketPrice - (gateManFee + stuffFee);
+    return remainingMoney;
+  }
+
+  const result = calculateMoney();
+  // console.log(result);
+}
+
+{
+  function checkName(name) {
+    if (typeof name !== "name") {
+      return "Invalid Name";
+    }
+    //  const lastLetter = name.slice(-1);
+    const lastLetter = name[name.length - 1];
+    let result = false;
+    const goodNameChar = ["a", "y", "i", "e", "o", "u", "w"];
+    for (const char of goodNameChar) {
+      if (char === lastLetter) {
+        result = true;
+      }
+    }
+    return result ? "Good Name" : "Bad Name";
+  }
+
+  const result = checkName("rudrav");
+  // console.log(result);
+}
+
+{
+  function checkName(name) {
+    if (typeof name !== "name") {
+      return "Invalid Name";
+    }
+    //  const lastLetter = name.slice(-1);
+    const lastLetter = name[name.length - 1];
+    const goodNameChar = ["a", "y", "i", "e", "o", "u", "w"];
+
+    for (const char of goodNameChar) {
+      if (char === lastLetter) {
+        return "Good Name";
+      } else {
+        return "Bad Name";
+      }
+    }
+  }
+
+  const result = checkName("rudra");
+  // console.log(result);
+}
+
+{
+  function checkName(name) {
+    if (typeof name !== "name") {
+      return "Invalid Name";
+    }
+    //  const lastLetter = name.slice(-1);
+    const lastLetter = name[name.length - 1];
+    const goodNameChar = ["a", "y", "i", "e", "o", "u", "w"];
+
+    let result = goodNameChar.includes(lastLetter);
+    return result ? "Good Name" : "Bad Name";
+  }
+
+  const result = checkName("rudrav");
+  // console.log(result);
+}
+
+{
+  // delete invalid virus
+  function deleteInvalid(array) {
+    if (!Array.isArray(array)) {
+      return "invalid array";
+    }
+    let numberArray = [];
+    for (const element of array) {
+      if (typeof element === "number" && isNaN(element) === false) {
+        numberArray.push(element);
+      }
+    }
+
+    return numberArray;
+  }
+
+  const test = deleteInvalid({ num: [1, 2, 3] });
+  console.log(test);
+}
+
+{
+  // make password for kolimuddin
+  function password(obj) {
+    if (
+      obj.name === undefined ||
+      obj.birthYear === undefined ||
+      obj.siteName === undefined ||
+      obj.birthYear.toString() !== 4
+    ) {
+      return "invalid";
+    }
+    let capitalFirstChar =
+      obj.siteName[0].toUpperCase() + obj.siteName.slice(1);
+    let password = capitalFirstChar + "#" + obj.name + "@" + obj.birthYear;
+    return password;
+  }
+
+  const test = password(2);
+  // console.log(test);
+}
+
+{
+  function monthlySavings(array, livingCost) {
+    if (!Array.isArray(array) || typeof livingCost !== "number") {
+      return "invalid input";
+    }
+    let totalPayment = 0;
+    for (const payment of array) {
+      if (payment >= 3000) {
+        let tax = payment * 0.2;
+        totalPayment = totalPayment + payment - tax;
+      } else {
+        totalPayment += payment;
+      }
+    }
+
+    let savings = totalPayment - livingCost;
+    return savings >= 0 ? savings : "earn more";
+  }
+
+  const result = monthlySavings([900, 2700, 3400], 10000);
+  console.log(result);
+}
+
