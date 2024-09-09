@@ -700,7 +700,7 @@ console.log(myHeight);
 
 {
   function checkName(name) {
-    if (typeof name !== "name") {
+    if (typeof name !== "string") {
       return "Invalid Name";
     }
     //  const lastLetter = name.slice(-1);
@@ -721,7 +721,7 @@ console.log(myHeight);
 
 {
   function checkName(name) {
-    if (typeof name !== "name") {
+    if (typeof name !== "string") {
       return "Invalid Name";
     }
     //  const lastLetter = name.slice(-1);
@@ -743,7 +743,7 @@ console.log(myHeight);
 
 {
   function checkName(name) {
-    if (typeof name !== "name") {
+    if (typeof name !== "string") {
       return "Invalid Name";
     }
     //  const lastLetter = name.slice(-1);
@@ -785,7 +785,7 @@ console.log(myHeight);
       obj.name === undefined ||
       obj.birthYear === undefined ||
       obj.siteName === undefined ||
-      obj.birthYear.toString() !== 4
+      obj.birthYear.toString().length !== 4
     ) {
       return "invalid";
     }
